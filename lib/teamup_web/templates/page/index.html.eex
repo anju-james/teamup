@@ -1,0 +1,28 @@
+
+<div class="divider"></div>
+  <div class="section">
+    <div id="searchbar">
+       <!-- Create SearchArea -->
+    </div>
+  </div>
+
+  <div class="row">
+    <span class="col s11"><b>Popular study groups this week</b></span>
+    <span class="col s1 blue-text">See All</span>
+    <div class="section">
+        <div id="studycard">
+               <!-- Create StudyCards -->
+        </div>
+      </div>
+  </div>
+
+
+  <div class="row">
+    <span class="col s11"><b>Explore by Departments</b></span>
+    <span class="col s1 blue-text">See All</span>
+    <div class="section">
+          <div id="category">
+                 <!-- Create StudyCards -->
+          </div>
+    </div>
+  </div>
