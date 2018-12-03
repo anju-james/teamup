@@ -38,7 +38,7 @@ class SearchResultsView extends React.Component {
                 <footer className="page-footer orange footer-copyright">
                     <div className="footer-copyright">
                         <div className="container">
-                            Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">Anju James</a>
+                            Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp Crew</a>
                         </div>
                     </div>
                 </footer>
@@ -65,9 +65,9 @@ class SingleResult extends React.Component {
                             </div>
                             <div className="card-action light-blue lighten-5">
                                 <div className="row">
-                                    <i className="material-icons">access_time</i>
+                                    <i className="material-icons blue-text">access_time</i>
                                     <span>{this.props.time} </span>
-                                    <i className="material-icons">location_on</i>
+                                    <i className="material-icons blue-text">location_on</i>
                                     <span>{this.props.location} </span>
                                     <a href="#" className="right waves-effect waves-light btn green lighten-1">Join</a>
                                     <Link to={"/group_details/" + this.props.group_id}
