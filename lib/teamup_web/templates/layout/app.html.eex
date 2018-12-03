@@ -8,31 +8,9 @@
   <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-</head>
-<body>
-    <header>
-        <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">TeamUp</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a id="download-button" class="waves-effect waves-light btn orange">Create a New Group</a></li>
-                <li><a href="/" class="waves-effect waves-light">Home</a></li>
-                <li><a href="#" class="waves-effect waves-light">Log In</a></li>
-            </ul>
-
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
-    </nav>
-  </header>
-
-
-  <div class="container">
-    <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-    </main>
-    <div class="section">
-
-  <!--  Scripts-->
   <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-
-  </body>
+</head>
+<body id="teamup_root">
+<!-- Render from react -->
+</body>
 </html>

@@ -27,7 +27,7 @@ class Department extends React.Component {
                         <div className="card-title">
                             <div className="card-content">
                                 <br></br>
-                                <div className="center-align">
+                                <div className="center-align blue-grey-text text-darken-3">
                                     <h6><b>{this.props.name}</b></h6>
                                 </div>
                             </div>

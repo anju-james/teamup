@@ -1,10 +1,12 @@
 import React from 'react';
-import { ToastContainer, toast, Flip } from 'react-toastify';
+import {ToastContainer, toast, Flip} from 'react-toastify';
 import {Redirect} from 'react-router-dom';
 import store, {USER_JOIN_GROUP} from './store';
 import {connect} from "react-redux";
+import NavBar from './NavBar';
 
-class DetailCardView extends React.Component{
+
+class DetailCardView extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -20,7 +22,7 @@ class DetailCardView extends React.Component{
         }
     }
 
-    render () {
+    render() {
         if (!this.props.match.params.group_id) {
             return (<Redirect to='/'/>);
         }
@@ -31,16 +33,22 @@ class DetailCardView extends React.Component{
         }
 
         return (
+            <div>
 
+                <NavBar/>
+
+                <br></br>
+                <br></br>
+
+                <div className="container">
                 <div className=" col s12 m6">
                     <div className="card">
                         <div className="card-content">
-                            <div className="row">
-                                <a className="col s2 btn-floating btn-large waves-effect waves-light blue lighten-2 prefix">16 Oct</a>
-                                <span className="card-title col s6" id="suffix">
-                                    <h4>{matching_group.title}</h4></span>
+                            <div className="row ">
+                                <span className="card-title col s8 align-left" id="suffix">
+                                    <b>{matching_group.title}</b></span>
                                 <div className="col s4">
-                                    <span className="center"><b>Are you interested?</b></span>
+                                    <span className="center">Are you interested?</span>
                                     <br></br>
                                     <span>
                                         <button className="hoverable">
@@ -50,19 +58,24 @@ class DetailCardView extends React.Component{
                                     </span>
                                 </div>
                             </div>
-                            <span><h6><b>Date: </b>{matching_group.date}, <b>Host: </b>{matching_group.hostname} {matching_group.course}</h6> </span>
+                            <span>Hosted by: {matching_group.hostname} {matching_group.course}</span>
+                            <div className="divider"></div>
 
                         </div>
                         <div className="card-content">
+                            <p><b>Details</b></p>
                             <p>{matching_group.description}</p>
                             <br></br>
-
-                            <i className="material-icons prefix">access_time</i>
+                            <i className="material-icons blue-text prefix">date_range</i>
+                            <span>   {matching_group.date}</span>
+                            <br></br>
+                            <i className="material-icons blue-text prefix">access_time</i>
                             <span>   {matching_group.time}</span>
                             <br></br>
-                            <i className="material-icons prefix">location_on</i>
+                            <i className="material-icons blue-text prefix">location_on</i>
                             <span>   {matching_group.location}</span>
                             <br></br>
+
 
                             <div className=" center-align">
                                 <button onClick={(e) => this.handleClick(matching_group.id, e)} className="waves-effect waves-light btn green lighten-1">
@@ -86,16 +99,19 @@ class DetailCardView extends React.Component{
 
 
                         </div>
-                        <div className="card-action">
-                            <span>Attendees({matching_group.attendees.length})</span>
+                        <div className="card-action light-blue lighten-5">
+                            <span><b>Attendees({matching_group.attendees.length})</b></span>
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
 
         );
     }
 
 }
+
 const mapStateToProps = state => {
     return {study_groups: state.study_groups, user_info: state.user_info}
 };
