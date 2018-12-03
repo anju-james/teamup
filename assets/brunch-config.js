@@ -51,7 +51,7 @@ exports.config = {
       },
       sass: {
           options: {
-              includePaths: ["node_modules/materialize-css/sass"],
+              includePaths: ["node_modules/materialize-css/sass","node_modules/react-toastify/scss"],
               precision: 8,
           }
       }

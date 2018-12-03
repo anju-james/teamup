@@ -13,6 +13,8 @@
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-router-dom": "^4.2.2",
+    "react-toastify": "^4.0.0-rc.4",
     "reactstrap": "^6.5.0",
     "underscore": "^1.9.1"
   },

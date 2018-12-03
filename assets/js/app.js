@@ -20,33 +20,14 @@
 // import socket from "./socket"
 
 import React from 'react'
-import ReactDOM from 'react-dom';
-import SearchBar from './SearchBar';
-import StudyGroupCard from './StudyGroupCard'
-import DepartmentCards from './DepartmentCards'
-import DetailCard from './DetailCard'
-import Login from './LogIn';
+import ReactDOM from 'react-dom'
+import TeamUpSpa from './TeamUpSpa'
 
 function init() {
+    let app_root = document.getElementById("teamup_root");
 
-    let search = document.getElementById("searchbar");
-    let studygroupcard = document.getElementById("studycard")
-    let category = document.getElementById("category")
-    let detail = document.getElementById("seemore")
-    let login = document.getElementById("login")
-
-    if(search && studygroupcard && category) {
-        ReactDOM.render(<SearchBar />, search);
-        ReactDOM.render(<StudyGroupCard/>, studygroupcard)
-        ReactDOM.render(<DepartmentCards/>, category)
-    }
-
-    if(seemore) {
-        ReactDOM.render(<DetailCard/>, seemore)
-    }
-
-    if(login) {
-        ReactDOM.render(<Login/>, login)
+    if(app_root) {
+        ReactDOM.render(<TeamUpSpa/>, app_root)
     }
 }
 

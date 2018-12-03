@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
+
 
 class StudyGroupCard extends React.Component{
     constructor(props) {
@@ -22,15 +24,15 @@ class StudyGroupCard extends React.Component{
 
     render() {
             return (
-                <div class="row ">
+                <div className="row ">
 
-                <div class="col s4">
+                <div className="col s4">
                     {this.renderCard(0)}
                 </div>
-                <div class="col s4">
+                <div className="col s4">
                     {this.renderCard(1)}
                 </div>
-                <div class="col s4">
+                <div className="col s4">
                     {this.renderCard(2)}
                 </div>
 
@@ -52,7 +54,7 @@ class SmallCard extends React.Component{
                             <p>{this.props.content}</p>
                         </div>
                         <div className="card-action center-align">
-                            <a href="/study_detail">See More</a>
+                            <Link to="/study_detail">See More</Link>
                         </div>
                     </div>
                 </div>

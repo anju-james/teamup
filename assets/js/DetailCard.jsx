@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+
 
 class DetailCard extends React.Component{
     constructor(props) {
@@ -13,6 +15,14 @@ class DetailCard extends React.Component{
             HostMajor:["MS CS"],
             Attendees:[1,2,3,4,5],
         }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        toast.success("You have joined this study group!", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+
     }
 
 
@@ -37,7 +47,7 @@ class DetailCard extends React.Component{
                                     </span>
                                 </div>
                             </div>
-                            <span><h7><b>Date: </b>{this.state.Date}, <b>Host: </b>{this.state.HostName} {this.state.HostMajor}</h7></span>
+                            <span><h6><b>Date: </b>{this.state.Date}, <b>Host: </b>{this.state.HostName} {this.state.HostMajor}</h6></span>
 
                         </div>
                         <div className="card-content">
@@ -52,8 +62,21 @@ class DetailCard extends React.Component{
                             <br></br>
 
                             <div className=" center-align">
-                                <a href="/study_detail" class="waves-effect waves-light btn green lighten-1">
-                                   Join Study Group</a>
+                                <button onClick={this.handleClick} className="waves-effect waves-light btn green lighten-1">
+                                    Join Study Group
+                                </button>
+                                <ToastContainer
+                                    transition={Flip}
+                                    position="top-center"
+                                    autoClose={5000}
+                                    hideProgressBar
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnVisibilityChange={false}
+                                    draggable={false}
+                                    pauseOnHover={false}
+                                />
                             </div>
                             <br></br>
 

@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
                                         <span className="helper-text">Search by Department Name, CourseID or Topic</span>
                                     </div>
                                     <div className="input-field col s2">
-                                        <a id="suffix download-button" class="waves-effect waves-light btn blue">Search</a>
+                                        <a id="suffix download-button" className="waves-effect waves-light btn blue">Search</a>
                                     </div>
                                 </div>
                             </form>
