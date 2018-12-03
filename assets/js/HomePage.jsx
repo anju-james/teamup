@@ -14,7 +14,7 @@ class HomePage extends React.Component {
         return (
             <div>
                 <NavBar/>
-            <div class="container">
+            <div className="container">
                 <div className="divider"></div>
                 <div className="section">
                     <SearchBar/>
@@ -40,7 +40,7 @@ class HomePage extends React.Component {
             <footer className="page-footer orange footer-copyright">
                 <div className="footer-copyright">
                     <div className="container">
-                        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Anju James</a>
+                        Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp Crew!!!</a>
                     </div>
                 </div>
             </footer>

@@ -13,7 +13,9 @@ class NavBar extends React.Component {
             <header>
             <nav className="light-blue lighten-1" role="navigation">
                 <div className=" nav-wrapper container ">
-                    <a href="/" id="logo-container" className="brand-logo">TeamUp</a>
+                    <a href="/" id="logo-container" className="brand-logo">
+                        <i className="large material-icons white-text">group</i>
+                        TeamUp</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a id="download-button" className="waves-effect waves-light btn orange">Create a New Group</a></li>
                         <li><a href="/" className="waves-effect waves-light btn-flat">Home</a></li>
