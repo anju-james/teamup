@@ -40,7 +40,7 @@ class HomePage extends React.Component {
             <footer className="page-footer orange footer-copyright">
                 <div className="footer-copyright">
                     <div className="container">
-                        Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp Crew</a>
+                        Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp Crew!!!</a>
                     </div>
                 </div>
             </footer>
