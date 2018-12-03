@@ -16,7 +16,7 @@ class TeamUpSpa extends React.Component {
                 <HashRouter>
                     <Switch>
                         <Route exact path='/' component={HomePage}/>
-                        <Route exact path='/study_detail' component={DetailCard}/>
+                        <Route path='/group_details/:group_id' component={DetailCard}/>
                         <Redirect from="*" to="/"/>
                     </Switch>
                 </HashRouter>

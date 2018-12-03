@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBar from "./SearchBar";
 import StudyGroupCard from "./StudyGroupCard";
 import DepartmentCards from "./DepartmentCards";
+import NavBar from './NavBar';
 
 
 class HomePage extends React.Component {
@@ -13,7 +14,6 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-
                 <div className="divider"></div>
                 <div className="section">
                     <SearchBar/>

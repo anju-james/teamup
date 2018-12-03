@@ -22,12 +22,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TeamUpSpa from './TeamUpSpa'
+import store from './store';
+import {Provider} from 'react-redux';
+
 
 function init() {
     let app_root = document.getElementById("teamup_root");
 
     if(app_root) {
-        ReactDOM.render(<TeamUpSpa/>, app_root)
+        ReactDOM.render(<Provider store={store}>
+            <TeamUpSpa /></Provider>, app_root);
     }
 }
 

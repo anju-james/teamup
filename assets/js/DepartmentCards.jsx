@@ -1,52 +1,22 @@
 import React from 'react'
+import {connect} from "react-redux";
 
-class DepartmentCards extends React.Component {
+class DepartmentCardsView extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: ["Computer Science", "Architecture", "Humanities", "History", "Music", "Human Development", "Communication", "Development Sociology"]
-        }
-    }
-
-    renderDepCard(i) {
-        return<Department name={this.state.name[i]}/>
     }
 
     render() {
         return(
             <div className="row ">
-
-                <div className="col s3">
-                    {this.renderDepCard(0)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(1)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(2)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(3)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(4)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(5)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(6)}
-                </div>
-                <div className="col s3">
-                    {this.renderDepCard(7)}
-                </div>
+                {this.props.departments.map((name, index) =>
+                    <div key={index} className="col s3">
+                        <Department key={index} name={name}/>
+                    </div>)}
             </div>
         );
     }
-
-
 }
-
 
 class Department extends React.Component {
     render() {
@@ -69,4 +39,9 @@ class Department extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {departments: state.department_categories}
+}
+
+const DepartmentCards = connect(mapStateToProps)(DepartmentCardsView);
 export default DepartmentCards;

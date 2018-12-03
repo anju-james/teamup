@@ -1,47 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import {connect} from "react-redux";
 
 
-class StudyGroupCard extends React.Component{
+class StudyGroupCardView extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title:["HCI Quiz 2", "Algorithms Exam Prep", "Anthropology Discussion"],
-            content: ["A study group for UI Design Patterns and Gestalt Principles. User Analysis time for projects also included.",
-            "Prepare for Algorithms Final Exam by practising Dynamic Programing and Greedy Algorithms.",
-            "A discussion group to analyse meaning and relevance of public space."],
-
-        }
-
-    }
-
-    renderCard(i){
-        return <SmallCard title={this.state.title[i]}
-                          content={this.state.content[i]}/>
-
     }
 
     render() {
-            return (
-                <div className="row ">
-
-                <div className="col s4">
-                    {this.renderCard(0)}
-                </div>
-                <div className="col s4">
-                    {this.renderCard(1)}
-                </div>
-                <div className="col s4">
-                    {this.renderCard(2)}
-                </div>
-
+        return (
+            <div className="row ">
+                {this.props.study_groups.map((group) =>
+                    <div key={group.id} className="col s4">
+                        <SmallCard key={group.id} group_id={group.id} title={group.title} content={group.description}/>
+                    </div>)
+                }
             </div>
         );
     }
 }
 
-class SmallCard extends React.Component{
+class SmallCard extends React.Component {
     render() {
         return (
             <div className="row">
@@ -53,8 +34,8 @@ class SmallCard extends React.Component{
                         <div className="card-content light-blue lighten-5">
                             <p>{this.props.content}</p>
                         </div>
-                        <div className="card-action center-align">
-                            <Link to="/study_detail">See More</Link>
+                        <div className="card-action hoverable center-align">
+                            <Link className="orange-text text-accent-4" to={"/group_details/" + this.props.group_id}>See More</Link>
                         </div>
                     </div>
                 </div>
@@ -62,5 +43,11 @@ class SmallCard extends React.Component{
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {study_groups: state.study_groups}
+}
+
+const StudyGroupCard = connect(mapStateToProps)(StudyGroupCardView);
 
 export default StudyGroupCard;
