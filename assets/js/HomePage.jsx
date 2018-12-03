@@ -8,12 +8,13 @@ import NavBar from './NavBar';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
         return (
             <div>
+                <NavBar/>
+            <div class="container">
                 <div className="divider"></div>
                 <div className="section">
                     <SearchBar/>
@@ -34,8 +35,17 @@ class HomePage extends React.Component {
                         <DepartmentCards/>
                     </div>
                 </div>
+
             </div>
-        );
+            <footer className="page-footer orange footer-copyright">
+                <div className="footer-copyright">
+                    <div className="container">
+                        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Anju James</a>
+                    </div>
+                </div>
+            </footer>
+            </div>
+    );
     }
 }
 

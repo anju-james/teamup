@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom'
+
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -25,7 +27,7 @@ class SearchBar extends React.Component {
                                         <span className="helper-text">Search by Department Name, CourseID or Topic</span>
                                     </div>
                                     <div className="input-field col s2">
-                                        <a id="suffix download-button" className="waves-effect waves-light btn blue">Search</a>
+                                        <Link to={"/results"} id="suffix download-button" className="waves-effect waves-light btn blue">Search</Link>
                                     </div>
                                 </div>
                             </form>

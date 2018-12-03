@@ -28,7 +28,7 @@ study_groups_static_data.push({id:1,title:"HCI Quiz 2",date:"Friday, December 6t
 study_groups_static_data.push({id:2,title:"Algorithms Exam Prep",date:"Wednesday, December 5th 2018",location:"120 Snell Library",
     time:"2.30 pm to 4.00 pm",description:"Prepare for Algorithms Final Exam by practising Dynamic Programing and Greedy Algorithms.",
     hostname:"Alice John", course:"CS5200", department:"Computer Science",attendees:["Mily Lopez", "Roshan Francis", "Teresa Antony"]});
-study_groups_static_data.push({id:3,title:"Anthropology Discussion",date:"Monday, December 10th 2018",location:"100 Snell Engineering",
+study_groups_static_data.push({id:3,title:"Anthropology Discourse",date:"Monday, December 10th 2018",location:"100 Snell Engineering",
     time:"10.30 am to 12.00 pm",description:"A discussion group to analyse meaning and relevance of public space.",
     hostname:"Mia John", course:"CS5200", department:"Humanities",attendees:["Karan Kishore", "Roshan Francis", "Teresa Antony"]});
 

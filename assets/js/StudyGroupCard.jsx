@@ -27,12 +27,13 @@ class SmallCard extends React.Component {
         return (
             <div className="row">
                 <div className="col s12 ">
-                    <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">{this.props.title}</span>
+                    <div className="card m7">
+                        <div className="card-title center-align">
+                            <span className=" light-blue-text text-darken-3"><b>{this.props.title}</b></span>
                         </div>
                         <div className="card-content light-blue lighten-5">
                             <p>{this.props.content}</p>
+
                         </div>
                         <div className="card-action hoverable center-align">
                             <Link className="orange-text text-accent-4" to={"/group_details/" + this.props.group_id}>See More</Link>
