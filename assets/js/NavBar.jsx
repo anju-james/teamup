@@ -17,7 +17,7 @@ class NavBar extends React.Component {
                         <i className="large material-icons white-text">group</i>
                         TeamUp</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><a id="download-button" className="waves-effect waves-light btn orange">Create a New Group</a></li>
+                        <li><Link to={"/create"} id="download-button" className="waves-effect waves-light btn orange">Create a New Group</Link></li>
                         <li><a href="/" className="waves-effect waves-light btn-flat">Home</a></li>
                         <li><Link to={"/login"} className="waves-effect waves-light btn-flat">Log In</Link></li>
                     </ul>

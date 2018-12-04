@@ -6,17 +6,16 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0",
     "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-toastify": "^4.0.0-rc.4",
-    "reactstrap": "^6.5.0",
-    "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "underscore": "^1.9.1"
   },
