@@ -48,6 +48,7 @@ class SearchResultsView extends React.Component {
 }
 
 class SingleResult extends React.Component {
+
     render() {
         return (
             <div className="row">
@@ -57,7 +58,7 @@ class SingleResult extends React.Component {
                                 <div className="row">
                                     <span className="card-title col s6 blue-text">{this.props.title}</span>
                                     <span className="col s6 right-align">
-                                <i className="material-icons">date_range</i>
+                                <i className="material-icons blue-text">date_range</i>
                                         {this.props.date}</span>
                                 </div>
 

@@ -58,12 +58,13 @@ class DetailCardView extends React.Component {
                                     </span>
                                 </div>
                             </div>
-                            <span>Hosted by: {matching_group.hostname} {matching_group.course}</span>
+                            <span><b>Host:</b> {matching_group.hostname}, Majoring {matching_group.department}.</span>
                             <div className="divider"></div>
 
                         </div>
                         <div className="card-content">
                             <p><b>Details</b></p>
+                            <p>CourseID: {matching_group.course} </p>
                             <p>{matching_group.description}</p>
                             <br></br>
                             <i className="material-icons blue-text prefix">date_range</i>
@@ -102,9 +103,28 @@ class DetailCardView extends React.Component {
                         <div className="card-action light-blue lighten-5">
                             <span><b>Attendees({matching_group.attendees.length})</b></span>
                         </div>
+
+
                     </div>
+
                 </div>
             </div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+
+
+                <footer className="page-footer orange footer-copyright">
+                    <div className="footer-copyright">
+                        <div className="container">
+                            Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp
+                            Crew!!!</a>
+                        </div>
+                    </div>
+                </footer>
             </div>
 
         );
