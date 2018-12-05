@@ -15,8 +15,8 @@ class FilterSearchResultsPage extends React.Component {
                         <span>Filter By</span>
                     </div>
                     <div className="col push-l1">
-                        <select className="browser-default light-blue lighten-5">
-                            <option value="" disabled selected>Department</option>
+                        <select className="browser-default light-blue lighten-5" defaultValue="">
+                            <option value="" disabled >Department</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
@@ -24,8 +24,8 @@ class FilterSearchResultsPage extends React.Component {
                     </div>
 
                     <div className="col push-l1">
-                        <select className="browser-default light-blue lighten-5 ">
-                            <option value="" disabled selected>CourseID</option>
+                        <select className="browser-default light-blue lighten-5" defaultValue="">
+                            <option value="" disabled >CourseID</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
@@ -33,8 +33,8 @@ class FilterSearchResultsPage extends React.Component {
                     </div>
 
                     <div className="col push-l1">
-                        <select className="browser-default light-blue lighten-5">
-                            <option value="" disabled selected>Date</option>
+                        <select className="browser-default light-blue lighten-5" defaultValue="">
+                            <option value="" disabled >Date</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>

@@ -1,12 +1,11 @@
 import React from 'react';
 import NavBar from "./NavBar";
 
-
 class CreateGroupPage extends React.Component {
     constructor(props) {
         super(props);
-
     }
+
 
     render() {
         /*
@@ -97,7 +96,7 @@ import {DatetimePicker} from 'rc-datetime-picker';
                                     Choose Date and Time:
                                 </div>
                                 <div className="input-field prefix">
-                                    <input placeholder="Date" type = "date" className="datepicker col s7"/>
+                                    <input placeholder="Date" type="date" className="datepicker col s7"/>
                                 </div>
 
                             </div>

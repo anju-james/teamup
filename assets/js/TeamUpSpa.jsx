@@ -5,7 +5,8 @@ import DetailCard from "./DetailCard";
 import LogIn from './LogIn';
 import SearchResults from "./SearchResults";
 import CreateGroupPage from './CreateGroupPage';
-
+import NoResults from './NoResults';
+import SeeAll from './SeeAll';
 
 class TeamUpSpa extends React.Component {
     constructor(props) {
@@ -21,8 +22,10 @@ class TeamUpSpa extends React.Component {
                         <Route exact path='/' component={HomePage}/>
                         <Route path='/group_details/:group_id' component={DetailCard}/>
                         <Route exact path='/login' component={LogIn}/>
-                        <Route exact path='/results' component={SearchResults}/>
+                        <Route exact path='/results/:search_value' component={SearchResults}/>
                         <Route exact path='/create' component={CreateGroupPage}/>
+                        <Route exact path='/noresults' component={NoResults}/>
+                        <Route exact path='/seeall' component={SeeAll}/>
                         <Redirect from="*" to="/"/>
                     </Switch>
                 </HashRouter>

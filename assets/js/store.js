@@ -19,12 +19,13 @@ each study_group_detail
 hostname,course,department,attendees}
 
  */
-
+let user_info_static_data=[];
+user_info_static_data.push({username:"test1", fullname:"testuser1", avatar: ""})
 
 let study_groups_static_data = [];
 study_groups_static_data.push({id:1,title:"HCI Quiz 2",date:"Friday, December 6th 2018",location:"320 Shillman Hall",
     time:"12.30 pm to 2.00 pm",description:"A study group for UI Design Patterns and Gestalt Principles." +
-    " User Analysis time for projects also included.", hostname:"John Doe", course:"CS5340", department:"Computer Science",attendees:["Alice John", "Rachel Wonka", "Cathy Chapman"]});
+    " User Analysis included.", hostname:"John Doe", course:"CS5340", department:"Computer Science",attendees:["Alice John", "Rachel Wonka", "Cathy Chapman"]});
 study_groups_static_data.push({id:2,title:"Algorithms Exam Prep",date:"Wednesday, December 5th 2018",location:"120 Snell Library",
     time:"2.30 pm to 4.00 pm",description:"Prepare for Algorithms Final Exam by practising Dynamic Programing and Greedy Algorithms.",
     hostname:"Alice John", course:"CS5200", department:"Computer Science",attendees:["Mily Lopez", "Roshan Francis", "Teresa Antony"]});
