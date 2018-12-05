@@ -88,6 +88,10 @@ class LogInView extends React.Component {
                 <br></br>
 
                 <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+
 
 
                 <footer className="page-footer orange footer-copyright">

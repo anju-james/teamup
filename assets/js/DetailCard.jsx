@@ -71,8 +71,6 @@ class DetailCardView extends React.Component {
             />
             </div>);
         }
-
-
     }
 
     render() {
