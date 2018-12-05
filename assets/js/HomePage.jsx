@@ -3,6 +3,8 @@ import SearchBar from "./SearchBar";
 import StudyGroupCard from "./StudyGroupCard";
 import DepartmentCards from "./DepartmentCards";
 import NavBar from './NavBar';
+import {Link} from 'react-router-dom'
+
 
 
 class HomePage extends React.Component {
@@ -22,7 +24,7 @@ class HomePage extends React.Component {
 
                 <div className="row">
                     <span className="col s11"><b>Popular study groups this week</b></span>
-                    <span className="col s1 blue-text">See All</span>
+                    <Link to={"/seeall"} className="col s1 blue-text">See All</Link>
                     <div className="section">
                         <StudyGroupCard/>
                     </div>

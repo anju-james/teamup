@@ -1,22 +1,42 @@
 import React from 'react';
+import { browserHistory } from 'react-router'
+import store from './store';
+import {connect} from "react-redux";
+import {Link} from 'react-router-dom'
 
-class LogIn extends React.Component {
+
+class LogInView extends React.Component {
     constructor(props) {
         super(props);
+        this.state={username: ""};
+    }
+
+    handleInputChange(event) {
+        this.setState({username: event.target.value });
+    }
+
+    handleClick(){
+        // do validations
+        store.dispatch({type: "USER_LOGIN", username: this.state.username, fullname: this.state.username})
+        this.props.history.goBack();
     }
 
 
     render() {
+        if (this.props.user_info.username) {
+            // already logged in
+            this.props.history.goBack();
+        }
         return (
             <div>
                 <div>
                     <nav className="light-blue lighten-1" role="navigation">
                         <div className="nav-wrapper container ">
-                            <a href="/" id="logo-container" className="brand-logo">
+                            <Link to="/" id="logo-container" className="brand-logo">
                                 <i className="large material-icons white-text">group</i>
-                                TeamUp</a>
+                                TeamUp</Link>
                             <ul id="nav-mobile" className="right hide-on-med-and-down">
-                                <li><a href="/" className="waves-effect waves-light btn-flat">Home</a></li>
+                                <li><Link to={"/"} className="waves-effect waves-light btn-flat">Home</Link></li>
                             </ul>
 
                         </div>
@@ -33,7 +53,8 @@ class LogIn extends React.Component {
                                     <span className="card-title center">Log In here...</span>
                                     <div className="row">
                                         <div className="input-field col s12">
-                                            <input id="username" type="text" className="validate"/>
+                                            <input id="username" onChange={(e) => this.handleInputChange(e)} type="text"
+                                                   value={this.state.username} className="validate"/>
                                             <label htmlFor={"username"}>My Northeastern Username</label>
                                         </div>
                                     </div>
@@ -44,12 +65,12 @@ class LogIn extends React.Component {
                                         </div>
                                     </div>
                                     <div className="center">
-                                        <a href="#" className="orange waves-effect waves-light btn">Login</a>
+                                        <Link to="/" onClick={(e) =>this.handleClick(e)} username={this.state.username} className="orange waves-effect waves-light btn">Login</Link>
                                     </div>
                                 </div>
                                 <div className="card-action center blue lighten-5">
-                                    <a href="#" className="waves-effect waves-light btn-flat">Cancel</a>
-                                    <a href="#" className="waves-effect waves-light btn-flat">Forgot Password?</a>
+                                    <a onClick={(e) =>this.handleClick(e)} className="waves-effect waves-light btn-flat">Cancel</a>
+                                    <Link to="/" className="waves-effect waves-light btn-flat">Forgot Password?</Link>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +79,7 @@ class LogIn extends React.Component {
 
                 <h4 className=" offset s2 center header center orange-text">A group learning platform for Northeastern Students</h4>
                 <div className="col s12 offset-s6">
-                    <h6 className="header center bold ">Find your new study group!</h6>
+                    <h6 className="header center bold ">Find your new study group today with TeamUp!</h6>
                 </div>
 
                 <br></br>
@@ -84,4 +105,9 @@ class LogIn extends React.Component {
 
                 }
 
+const mapStateToProps = state => {
+    return {user_info: state.user_info}
+}
+
+const LogIn = connect(mapStateToProps)(LogInView)
 export default LogIn;
