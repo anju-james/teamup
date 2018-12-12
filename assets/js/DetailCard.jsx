@@ -4,6 +4,7 @@ import {Redirect} from 'react-router-dom';
 import store, {USER_JOIN_GROUP, USER_LEAVE_GROUP, USER_MARK_GROUP_INTEREST, USER_MARK_UNINTERESTED} from './store';
 import {connect} from "react-redux";
 import NavBar from './NavBar';
+import Avatar from "./Avatar";
 
 
 class DetailCardView extends React.Component {
@@ -179,6 +180,9 @@ class DetailCardView extends React.Component {
                             </div>
                             <div className="card-action light-blue lighten-5">
                                 <span><b>Attendees({matching_group.attendees.length})</b></span>
+                                <div className="row">
+                                    <Avatar group_id={matching_group.id}/>
+                                </div>
                             </div>
                         </div>
                     </div>
