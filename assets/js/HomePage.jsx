@@ -39,13 +39,13 @@ class HomePage extends React.Component {
                 </div>
 
             </div>
-            <footer className="page-footer orange footer-copyright">
-                <div className="footer-copyright">
-                    <div className="container">
-                        Made by <a className="orange-text text-lighten-3" href="http://materializecss.com">TeamUp Crew!!!</a>
+                <footer className="page-footer orange footer-copyright">
+                    <div className="orange footer-copyright">
+                        <div className="container">
+                            CS5340 Project: Made by Anju James & Tushar Khandelwal
+                        </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
             </div>
     );
     }
