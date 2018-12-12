@@ -1,6 +1,10 @@
 # Teamup
 
-To start your Phoenix server:
+Visit the teamup website on http://teamup.curiousmind.tech
+To start your Phoenix server: 
+
+
+##### Instructions to setup, compile and run the environment:
 
   * Install dependencies with `mix deps.get`
   * Install Node.js dependencies with `cd assets && npm install`
