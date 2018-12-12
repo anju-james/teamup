@@ -39,14 +39,14 @@ Storage.prototype.getObj = function(key) {
 
 if(!(localStorage.getObj('study_groups_static_data'))) {
     let static_data_to_insert = [];
-    static_data_to_insert.push({id:1,title:"HCI Quiz 2",date:"Friday, December 6th 2018",location:"320 Shillman Hall",
-        time:"12.30 pm to 2.00 pm",description:"A study group for UI Design Patterns and Gestalt Principles." +
+    static_data_to_insert.push({id:1,title:"HCI Quiz 2",date:"Friday, December 16th 2018",location:"320 Shillman Hall",
+        time:" 12.30 PM",description:"A study group for UI Design Patterns and Gestalt Principles." +
         " User Analysis included.", hostname:"John Doe", course:"CS5340", department:"Computer Science",attendees:["Alice John", "Rachel Wonka", "Cathy Chapman"]});
-    static_data_to_insert.push({id:2,title:"Algorithms Exam Prep",date:"Wednesday, December 5th 2018",location:"120 Snell Library",
-        time:"2.30 pm to 4.00 pm",description:"Prepare for Algorithms Final Exam by practising Dynamic Programing and Greedy Algorithms.",
+    static_data_to_insert.push({id:2,title:"Algorithms Exam Prep",date:"Wednesday, December 20th 2018",location:"120 Snell Library",
+        time:" 2.30 PM",description:"Prepare for Algorithms Final Exam by practising Dynamic Programing and Greedy Algorithms.",
         hostname:"Alice John", course:"CS5200", department:"Computer Science",attendees:["Mily Lopez", "Roshan Francis", "Teresa Antony"]});
-    static_data_to_insert.push({id:3,title:"Anthropology Discourse",date:"Monday, December 10th 2018",location:"100 Snell Engineering",
-        time:"10.30 am to 12.00 pm",description:"A discussion group to analyse meaning and relevance of public space.",
+    static_data_to_insert.push({id:3,title:"Anthropology Discourse",date:"Monday, December 29th 2018",location:"100 Snell Engineering",
+        time:" 10.30 AM",description:"A discussion group to analyse meaning and relevance of public space.",
         hostname:"Mia John", course:"CS4300", department:"Humanities",attendees:["Karan Kishore", "Roshan Francis", "Teresa Antony"]});
     localStorage.setObj('study_groups_static_data', static_data_to_insert);
     study_groups_static_data = static_data_to_insert;
