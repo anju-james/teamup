@@ -16,7 +16,8 @@ class DetailCardView extends React.Component {
             toast.success("You have joined this study group!", {
                 position: toast.POSITION.TOP_RIGHT
             });
-            store.dispatch({type: USER_JOIN_GROUP, group_id: group_id, fullname: this.props.user_info.fullname})
+            store.dispatch({type: USER_JOIN_GROUP, group_id: group_id, fullname: this.props.user_info.fullname,
+            username: this.props.user_info.username})
         } else {
             toast.warn("Login before you can join a group");
         }
@@ -27,7 +28,8 @@ class DetailCardView extends React.Component {
             toast.warn("You have left this study group!", {
                 position: toast.POSITION.TOP_RIGHT
             });
-            store.dispatch({type: USER_LEAVE_GROUP, group_id: group_id, fullname: this.props.user_info.fullname})
+            store.dispatch({type: USER_LEAVE_GROUP, group_id: group_id, fullname: this.props.user_info.fullname,
+            username: this.props.user_info.username})
         } else {
             toast.warn("Login before you can leave a group");
         }
@@ -38,7 +40,8 @@ class DetailCardView extends React.Component {
             toast.success("Group added to Interested Groups", {
                 position: toast.POSITION.BOTTOM_LEFT
             });
-            store.dispatch({type: USER_MARK_GROUP_INTEREST, group_id: group_id, fullname: this.props.user_info.fullname})
+            store.dispatch({type: USER_MARK_GROUP_INTEREST, group_id: group_id,
+                fullname: this.props.user_info.fullname, username: this.props.user_info.username})
         }else{
             toast.warn("Login to mark group Interested");
         }
@@ -49,7 +52,8 @@ class DetailCardView extends React.Component {
             toast.warn("Group removed from Interested Groups", {
                 position: toast.POSITION.BOTTOM_LEFT
             });
-            store.dispatch({type: USER_MARK_UNINTERESTED, group_id: group_id, fullname: this.props.user_info.fullname})
+            store.dispatch({type: USER_MARK_UNINTERESTED, group_id: group_id,
+                fullname: this.props.user_info.fullname, username: this.props.user_info.username})
         }else{
             toast.warn("Login to remove group from Interested groups");
         }
