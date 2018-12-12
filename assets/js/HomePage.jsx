@@ -26,7 +26,7 @@ class HomePage extends React.Component {
                     <span className="col s11"><b>Popular study groups this week</b></span>
                     <Link to={"/seeall"} className="col s1 blue-text">See All</Link>
                     <div className="section">
-                        <StudyGroupCard/>
+                        <StudyGroupCard limit={3}/>
                     </div>
                 </div>
 
