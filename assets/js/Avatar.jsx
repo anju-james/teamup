@@ -1,6 +1,8 @@
 import Blockies from 'react-blockies';
 import React from 'react';
 import {connect} from "react-redux";
+import ReactTooltip from 'react-tooltip'
+
 
 class AvatarView extends React.Component {
     constructor(props) {
@@ -16,16 +18,20 @@ class AvatarView extends React.Component {
             }
         }
 
-        let blockies = attendees.map((username, index) => <Blockies
+        let blockies = attendees.map((username, index) =>
+            <div className="col">
+            <p data-tip={username}>
+            <Blockies
             key = {index}
             seed={username}
             bgColor="black"
             color='white'
-            className="identicon"
-        />);
+            className="identicon"/></p>
+                <ReactTooltip/></div>
+            );
 
         return (
-            <div>{blockies}</div>
+            <div className="row">{blockies}</div>
         );
     }
 }
