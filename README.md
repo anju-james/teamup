@@ -1,6 +1,19 @@
 # Teamup
 
-To start your Phoenix server:
+## A Web platform to host and join Study Groups
+### Team TeamUp:  Anju James, Tushar Khandelwal
+##### You can visit the application [here](http://teamup.curiousmind.tech)
+
+=======================================================================
+ #### TeamUp Web Application Main Tasks 
+ 
+  * Join Study Groups
+  * Create/Host Study Groups
+  * Leave Study Groups
+  
+=======================================================================
+
+##### Instructions to setup, compile and run the environment:
 
   * Install dependencies with `mix deps.get`
   * Install Node.js dependencies with `cd assets && npm install`
