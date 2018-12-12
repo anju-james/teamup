@@ -10,6 +10,7 @@ import Avatar from "./Avatar";
 class DetailCardView extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {already_interested: false}
     }
 
     handleClickJoin(group_id) {
@@ -36,6 +37,29 @@ class DetailCardView extends React.Component {
         }
     }
 
+    handleFavoritiesClick(group_id){
+        if(this.props.user_info.username){
+            if (this.userAlreadyInterestedInGroup(group_id)) {
+                this.handleNotInterestedCLick(group_id);
+            } else {
+                this.handleInterestedClick(group_id);
+            }
+        }else{
+            toast.warn("Login to mark group Interested");
+        }
+    }
+
+    userAlreadyInterestedInGroup(group_id) {
+        if(this.props.user_info.username){
+            let user_name = this.props.user_info.username;
+            if (user_name in this.props.user_interested_study_group_ids
+                && this.props.user_interested_study_group_ids[user_name].includes(group_id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     handleInterestedClick(group_id){
         if(this.props.user_info.username){
             toast.success("Group added to Interested Groups", {
@@ -43,6 +67,7 @@ class DetailCardView extends React.Component {
             });
             store.dispatch({type: USER_MARK_GROUP_INTEREST, group_id: group_id,
                 fullname: this.props.user_info.fullname, username: this.props.user_info.username})
+            this.setState({already_interested: true})
         }else{
             toast.warn("Login to mark group Interested");
         }
@@ -55,6 +80,7 @@ class DetailCardView extends React.Component {
             });
             store.dispatch({type: USER_MARK_UNINTERESTED, group_id: group_id,
                 fullname: this.props.user_info.fullname, username: this.props.user_info.username})
+            this.setState({already_interested: false});
         }else{
             toast.warn("Login to remove group from Interested groups");
         }
@@ -120,6 +146,11 @@ class DetailCardView extends React.Component {
 
         let action_buttons = this.renderActionButton(user_already_joined, matching_group);
 
+        let icon_color = this.userAlreadyInterestedInGroup(matching_group.id) ? "orange-text" : "white-text";
+
+        let mark_text = this.userAlreadyInterestedInGroup(matching_group.id) ? "Marked" : "Mark";
+
+
         return (
             <div>
 
@@ -136,26 +167,27 @@ class DetailCardView extends React.Component {
                         <div className="card">
                             <div className="card-content">
                                 <div className="row">
-                                    <div className="col s8">
+                                    <div className="col s9">
                                         <div className="card-title align-left">
                                             <b>{matching_group.title}</b>
                                         </div>
                                         <b>Host:</b> {matching_group.hostname}, Majoring {matching_group.department}.
                                     </div>
-                                    <div className="col s4">
-                                        <div className="right-align">
-                                            <b>Are you Interested?</b>
+                                    <div className="col s3">
+                                        <div className="row">
+                                            <div className="center-align">
+                                                <b>{ mark_text + " as Interested"}</b>
+                                            </div>
+
                                         </div>
-                                        <div className="right">
-                                            <button className="waves-effect waves-light btn hoverable grey lighten-3 left"
-                                                    onClick={(e) => this.handleNotInterestedCLick(matching_group.id)}>
-                                                <i className="col s1 offset-s1 material-icons red-text">close</i></button>
+                                        <div className="row">
+                                        <div className="center-align">
+                                            <a class="btn-floating btn-medium light-blue lighten-2"
+                                               onClick={(e) => this.handleFavoritiesClick(matching_group.id)}>
+                                                <i className={"material-icons " + icon_color}>favorite</i></a>
                                         </div>
-                                        <div className="right">
-                                            <button className="waves-effect waves-light btn grey lighten-3 hoverable left"
-                                                    onClick={(e) => this.handleInterestedClick(matching_group.id)}>
-                                                <i className="col s1 offset-s1 material-icons green-text text-darken-4">check</i></button>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +231,10 @@ class DetailCardView extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {study_groups: state.study_groups, user_info: state.user_info}
+    return {study_groups: state.study_groups,
+        user_info: state.user_info,
+        user_interested_study_group_ids: state.user_interested_study_group_ids
+    }
 };
 
 const DetailCard = connect(mapStateToProps)(DetailCardView);

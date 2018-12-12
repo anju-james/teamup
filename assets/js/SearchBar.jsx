@@ -34,7 +34,7 @@ class SearchBarView extends React.Component {
                                 <div className="row">
                                     <div className="input-field col s10">
                                         <i className="material-icons prefix">search</i>
-                                        <input id="search" onChange={this.handleInputChange} type="text" value={this.state.value} class="validate"/>
+                                        <input id="search" onChange={this.handleInputChange} type="text" value={this.state.value} className="validate"/>
                                         <label htmlFor="search">Search here for a Study group</label>
                                         <span className="helper-text">Search by Department Name, CourseID or Topic</span>
                                     </div>

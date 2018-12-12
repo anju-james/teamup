@@ -1,8 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
 
 
-class SearchAreaAlone extends React.Component{
+class SearchAreaAloneView extends React.Component{
     constructor(props) {
         super(props);
         this.state={value: ""};
@@ -38,5 +39,12 @@ class SearchAreaAlone extends React.Component{
         );
     }
 }
+
+const mapStateToProps = state => {
+    return{study_groups: state.study_groups, user_info: state.user_info}
+}
+
+const SearchAreaAlone = connect(mapStateToProps)(SearchAreaAloneView);
+
 
 export default SearchAreaAlone;
