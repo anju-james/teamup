@@ -63,7 +63,7 @@ class DetailCardView extends React.Component {
     handleInterestedClick(group_id){
         if(this.props.user_info.username){
             toast.success("Group added to Interested Groups", {
-                position: toast.POSITION.BOTTOM_LEFT
+                position: toast.POSITION.TOP_CENTER
             });
             store.dispatch({type: USER_MARK_GROUP_INTEREST, group_id: group_id,
                 fullname: this.props.user_info.fullname, username: this.props.user_info.username})
@@ -76,7 +76,7 @@ class DetailCardView extends React.Component {
     handleNotInterestedCLick(group_id){
         if(this.props.user_info.username){
             toast.warn("Group removed from Interested Groups", {
-                position: toast.POSITION.BOTTOM_LEFT
+                position: toast.POSITION.TOP_CENTER
             });
             store.dispatch({type: USER_MARK_UNINTERESTED, group_id: group_id,
                 fullname: this.props.user_info.fullname, username: this.props.user_info.username})
@@ -182,7 +182,7 @@ class DetailCardView extends React.Component {
                                         </div>
                                         <div className="row">
                                         <div className="center-align">
-                                            <a class="btn-floating btn-medium light-blue lighten-2"
+                                            <a className="btn-floating btn-medium light-blue lighten-2"
                                                onClick={(e) => this.handleFavoritiesClick(matching_group.id)}>
                                                 <i className={"material-icons " + icon_color}>favorite</i></a>
                                         </div>
