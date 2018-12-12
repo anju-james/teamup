@@ -4,8 +4,8 @@
 ### Team TeamUp:  Anju James, Tushar Khandelwal
 ##### You can visit the application [here](http://teamup.curiousmind.tech)
 
-### TeamUp Web Application Main Tasks 
 =======================================================================
+ #### TeamUp Web Application Main Tasks 
  
   * Join Study Groups
   * Create/Host Study Groups
