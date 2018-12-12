@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from "react-redux";
+import {Link} from 'react-router-dom';
+
 
 class DepartmentCardsView extends React.Component {
     constructor(props) {
@@ -19,6 +21,14 @@ class DepartmentCardsView extends React.Component {
 }
 
 class Department extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handleClick(department_name) {
+
+    }
+
     render() {
         return (
             <div className="row">
@@ -27,8 +37,13 @@ class Department extends React.Component {
                         <div className="card-title">
                             <div className="card-content">
                                 <br></br>
-                                <div className="center-align blue-grey-text text-darken-3">
-                                    <h6><b>{this.props.name}</b></h6>
+                                <div className="center-align">
+                                    <h6><b>
+                                        <Link to={"/results/" + this.props.name}
+                                              onClick={(e) => this.handleClick(this.props.name, e)}
+                                        className="blue-grey-text text-darken-3">
+                                            {this.props.name}</Link>
+                                        </b></h6>
                                 </div>
                             </div>
                         </div>
@@ -40,8 +55,8 @@ class Department extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {departments: state.department_categories}
-}
+    return {departments: state.department_categories, study_groups: state.study_groups}
+};
 
 const DepartmentCards = connect(mapStateToProps)(DepartmentCardsView);
 export default DepartmentCards;

@@ -17,3 +17,21 @@
 .card-search-result {
   width:900px;
 }
+
+.breadcrumb:before {
+  color: #2196f3 ;
+}
+
+.breadnav {
+  background-color: transparent;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

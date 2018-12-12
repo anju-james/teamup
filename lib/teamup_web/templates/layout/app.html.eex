@@ -7,8 +7,10 @@
 
   <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 <body id="teamup_root">
 <!-- Render from react -->
