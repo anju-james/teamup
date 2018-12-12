@@ -205,6 +205,7 @@ class CreateGroupPageView extends React.Component {
                                     <textarea type="text"
                                               className="materialize-textarea"
                                               name="description"
+                                              placeholder="Details"
                                               id="description"
                                               value={this.state.description}
                                               onChange={(e) => this.handleDescriptionChange(e)}/>
@@ -230,7 +231,9 @@ class CreateGroupPageView extends React.Component {
                                     Date for study:
                                 </div>
                                 <div className="input-field prefix col s7">
-                                    <input type="text" id="studydatepicker"
+                                    <input type="text"
+                                           id="studydatepicker"
+                                           placeholder="Date"
                                            className="datepicker" ref="datepicker_ref"
                                            onChange={(e) => this.handleDateChange(e)}
                                            value={this.state.date}/>
@@ -243,6 +246,7 @@ class CreateGroupPageView extends React.Component {
                                 </div>
                                 <div className="col s7 input-field prefix">
                                     <input type="text"
+                                           placeholder="Time"
                                            className="timepicker"
                                            value={this.state.time}/>
                                 </div>

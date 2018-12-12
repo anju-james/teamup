@@ -20,14 +20,14 @@ class FilterSearchResultsPageView extends React.Component {
         let courseids = this.props.study_groups.map((group) => group.course);
 
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container center-align">
+                <div className="row ">
                     <div className="col push-l1">
                         <br></br>
                         <span>Filter By</span>
                     </div>
                     <div className="col push-l1">
-                        <select className="grey lighten-3"
+                        <select className="grey lighten-3 browser-default "
                                 defaultValue="">
                             <option value="" disabled >Department</option>
                             {departments.map((department) => <option value="1">{department}</option>)}
@@ -35,14 +35,13 @@ class FilterSearchResultsPageView extends React.Component {
                     </div>
 
                     <div className="col push-l1">
-                        <select className="grey lighten-3" defaultValue="">
+                        <select className="grey lighten-3 browser-default" defaultValue="">
                             <option value="" disabled >CourseID</option>
                             {courseids.map((course) =><option value="1">{course}</option>)}
                         </select>
                     </div>
 
                 </div>
-                <div className="divider"></div>
 
             </div>
         );

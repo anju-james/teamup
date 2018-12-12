@@ -45,19 +45,24 @@ class SearchResultsView extends React.Component {
                                 <SearchAreaAlone/>
                             </div>
 
-                            <div className="row">
+                            <div className="section">
                                 <FilterSearchResultsPage/>
                             </div>
 
                             <div className="row">
-                                {groups.map((group) =>
-                                    <div key={group.id} className="col s12">
-                                        <SingleResult key={group.id} user_info={this.props.user_info} group_id={group.id}
-                                                      title={group.title} description={group.description}
-                                                      date={group.date} time={group.time} location={group.location}
-                                                      attendees={group.attendees}
-                                        />
-                                    </div>)}
+                                <div className="col s1">
+                                </div>
+                                <div className="col s11">
+                                    {groups.map((group) =>
+                                        <div key={group.id}>
+                                            <SingleResult key={group.id} user_info={this.props.user_info} group_id={group.id}
+                                                          title={group.title} description={group.description}
+                                                          date={group.date} time={group.time} location={group.location}
+                                                          attendees={group.attendees}
+                                            />
+                                        </div>)}
+                                </div>
+
                             </div>
                         </div>
                     </div>

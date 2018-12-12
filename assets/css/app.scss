@@ -39,3 +39,19 @@ main {
 .identicon {
   margin: 5px;
 }
+
+.tabs .indicator {
+  background-color: orange;
+}
+
+.tabs .tab a.active {
+  color: #039be5 ;
+}
+
+.tabs .tab a:hover {
+  color: #ffcc80;
+}
+
+.tabs .tab a {
+  color: orange;
+}

@@ -47,7 +47,7 @@ if(!(localStorage.getObj('study_groups_static_data'))) {
         hostname:"Alice John", course:"CS5200", department:"Computer Science",attendees:["Mily Lopez", "Roshan Francis", "Teresa Antony"]});
     static_data_to_insert.push({id:3,title:"Anthropology Discourse",date:"Monday, December 10th 2018",location:"100 Snell Engineering",
         time:"10.30 am to 12.00 pm",description:"A discussion group to analyse meaning and relevance of public space.",
-        hostname:"Mia John", course:"CS5200", department:"Humanities",attendees:["Karan Kishore", "Roshan Francis", "Teresa Antony"]});
+        hostname:"Mia John", course:"CS4300", department:"Humanities",attendees:["Karan Kishore", "Roshan Francis", "Teresa Antony"]});
     localStorage.setObj('study_groups_static_data', static_data_to_insert);
     study_groups_static_data = static_data_to_insert;
 
