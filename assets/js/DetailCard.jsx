@@ -190,10 +190,6 @@ class DetailCardView extends React.Component {
 
                                     </div>
                                 </div>
-                            </div>
-                            <div className="divider"></div>
-
-                            <div className="card-content">
                                 <p><b>Details</b></p>
                                 <p>CourseID: {matching_group.course} </p>
                                 <p>{matching_group.description}</p>
