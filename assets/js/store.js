@@ -25,9 +25,9 @@ user_info_static_data.push({username:"test1", fullname:"testuser1", avatar: ""})
 let department_categories_static_data = [];
 let study_groups_static_data = [];
 let last_user_info = {};
-let last_user_created_study_group_ids = [];
-let last_user_interested_study_group_ids = [];
-let last_user_registered_study_group_ids = [];
+let last_user_created_study_group_ids = {};
+let last_user_interested_study_group_ids = {};
+let last_user_registered_study_group_ids = {};
 
 // override storage to support object written
 Storage.prototype.setObj = function(key, obj) {
@@ -57,9 +57,9 @@ if(!(localStorage.getObj('study_groups_static_data'))) {
     department_categories_static_data = categories_static_data_to_insert;
 
     localStorage.setObj('user_info', {});
-    localStorage.setObj('user_created_study_group_ids',[]);
-    localStorage.setObj('user_interested_study_group_ids',[]);
-    localStorage.setObj('user_registered_study_group_ids', []);
+    localStorage.setObj('user_created_study_group_ids',{});
+    localStorage.setObj('user_interested_study_group_ids',{});
+    localStorage.setObj('user_registered_study_group_ids', {});
 } else {
     department_categories_static_data = localStorage.getObj('department_categories_static_data');
     study_groups_static_data = localStorage.getObj('study_groups_static_data');
@@ -135,11 +135,19 @@ function department_categories(state=department_categories_static_data, action) 
 function user_created_study_group_ids(state=last_user_created_study_group_ids, action) {
     switch (action.type) {
         case USER_CREATE_GROUP:
-            let new_state_create = [...state, action.group.id];
+            let new_state_create = state;
+            if (!(action.group.hostname in new_state_create)) {
+                new_state_create[action.group.hostname] = []
+            }
+            new_state_create[action.group.hostname] = [...new_state_create[action.group.hostname], action.group.id];
             localStorage.setObj('user_created_study_group_ids', new_state_create);
             return new_state_create;
         case HOST_DELETE_GROUP:
-            let new_state_delete = state.filter(group_id => group_id != action.group_id);
+            let new_state_delete = state;
+            if (action.group.hostname in new_state_create) {
+                new_state_delete[action.group.hostname] =
+                    new_state_delete[action.group_id.hostname].filter(group_id => group_id != action.group_id);
+            }
             localStorage.setObj('user_created_study_group_ids', new_state_delete);
             return new_state_delete;
         default:
@@ -150,11 +158,19 @@ function user_created_study_group_ids(state=last_user_created_study_group_ids, a
 function user_interested_study_group_ids(state=last_user_interested_study_group_ids, action) {
     switch (action.type) {
         case USER_MARK_GROUP_INTEREST:
-            let new_state_interest = [...state, action.group_id];
+            let new_state_interest = state;
+            if (!(action.username in new_state_interest)) {
+                new_state_interest[action.username] = []
+            }
+            new_state_interest[action.username] = [...new_state_interest[action.username], action.group_id];
             localStorage.setObj('user_interested_study_group_ids', new_state_interest);
             return new_state_interest;
         case USER_MARK_UNINTERESTED:
-            let new_state_remove = state.filter(group_id => group_id != action.group_id);
+            let new_state_remove = state;
+            if (action.username in new_state_remove) {
+                new_state_remove[action.username] =
+                    new_state_remove[action.username].filter(group_id => group_id != action.group_id);
+            }
             localStorage.setObj('user_interested_study_group_ids', new_state_remove);
             return new_state_remove;
         default:
@@ -165,11 +181,19 @@ function user_interested_study_group_ids(state=last_user_interested_study_group_
 function user_registered_study_group_ids(state=last_user_registered_study_group_ids, action) {
     switch (action.type) {
         case USER_JOIN_GROUP:
-            let new_state_join = [...state, action.group_id];
+            let new_state_join = state;
+            if (!(action.username in new_state_join)) {
+                new_state_join[action.username] = []
+            }
+            new_state_join[action.username] = [...new_state_join[action.username], action.group_id];
             localStorage.setObj('user_registered_study_group_ids', new_state_join);
             return new_state_join;
         case USER_LEAVE_GROUP:
-            let new_state_leave = state.filter(group_id => group_id != action.group_id);
+            let new_state_leave = state;
+            if (action.username in new_state_leave) {
+                new_state_leave[action.username] =
+                    new_state_leave[action.username].filter(group_id => group_id != action.group_id);
+            }
             localStorage.setObj('user_registered_study_group_ids', new_state_leave);
             return new_state_leave;
         default:
