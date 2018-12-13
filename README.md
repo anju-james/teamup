@@ -4,6 +4,9 @@
 ### Team TeamUp:  Anju James, Tushar Khandelwal
 ##### You can visit the application [here](http://teamup.curiousmind.tech)
 
+Application depends on local storage support in browser. Not all browsers may support the feature. 
+Application was tested  and verified using Chrome and Firefox. 
+
 =======================================================================
  #### TeamUp Web Application Main Tasks 
  
